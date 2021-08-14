@@ -1,0 +1,27 @@
+<h1>
+    Stickers:
+</h1>
+
+<table>
+    <% for (var i in stickers) { %>
+        <% var sticker = stickers[i]; %>
+        <tr>
+            <td>
+                <a href="/stickers/<%= sticker.id %>"><%= sticker.title %></a>
+            </td>
+            <td>
+                <a href="/stickers/<%= sticker.id %>" class="button">Show</a>
+            </td>
+            <td>
+                <a href="/stickers/<%= sticker.id %>/edit" class="button">Edit</a>
+            </td>
+            <td>
+                <a href="/stickers/<%= sticker.id %>?_method=DELETE"
+                   onClick="return confirm('Delete: <%= sticker.title %>');"
+                   class="button">Delete</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+<a href="/stickers/new" class="button">Create New Sticker</a>
