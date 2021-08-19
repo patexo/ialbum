@@ -1,0 +1,17 @@
+<h1>
+    Cromos:
+</h1>
+
+<table>
+    <% for (var i in stickers) { %>
+        <% var sticker = stickers[i]; %>
+        <tr>
+            <td>
+                <a href="/cromos/<%= sticker.id %>"><%= sticker.title %></a>
+            </td>
+            
+        </tr>
+    <% } %>
+</table>
+
+<a href="/cromos/new" class="button">Create New Cromo</a>

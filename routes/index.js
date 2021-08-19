@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const stickerController = require('../controllers/sticker');
+const cromoController = require('../controllers/cromo');
 
 const { Pool } = require ('pg');
 const pool = new Pool({
@@ -37,6 +38,12 @@ router.get('/db', async (req, res) => {
 // Autoload for routes using :stickerId
 router.param('stickerId', stickerController.load);
 
+// Autoload for routes using :cromoId
+router.param('cromoId', cromoController.load);
+
+// Routes for the resource /cromos
+router.get('/cromos',
+  cromoController.index);
 
 // Routes for the resource /stickers
 router.get('/stickers',
