@@ -33,7 +33,7 @@ exports.index = async (req, res, next) => {
     try {
         const client = await pool.connect();
         const cromos = await client.query(('SELECT * FROM stickers'));
-        res.render('cromos/index.ejs', {cromos});
+        res.render('cromos/index.ejs', cromos);
         client.release();
     } catch (error) {
         next(error);

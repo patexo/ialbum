@@ -2,7 +2,11 @@
     Cromos:
 </h1>
 
-
+<ul>
+    <% cromos.forEach(function(r) { %>
+        <li><%= r.id %> - <%= r.title %>- <%= r.description %></li>
+    <% }); %>
+</ul>
     
 
 <a href="/cromos/new" class="button">Create New Cromo</a>
