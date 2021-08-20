@@ -5,13 +5,9 @@
 <table>
     <% cromos.forEach(function(sticker) { %>
         
-        <tr>
-            <td>
-                <a href="/cromos/<%= sticker.id %>"><%= sticker.title %></a>
-            </td>
+        <<li><%= sticker.id %>"> - <%= sticker.title %></li>
             
-        </tr>
-    <% } %>
+    <% }); %>
 </table>
 
 <a href="/cromos/new" class="button">Create New Cromo</a>
